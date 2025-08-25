@@ -1,0 +1,18 @@
+Flask
+Flask-SQLAlchemy
+Flask-Login
+Flask-WTF
+Flask-CORS
+
+email-validator
+bcrypt
+sshtunnel
+SQLAlchemy
+psycopg2-binary
+PyYAML
+python-dotenv
+requests
+
+# MCP Server dependencies
+mcp>=1.0.0
+pydantic>=2.0.0

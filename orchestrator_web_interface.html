@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<!-- saved from url=(1665)https://product-ai-production-core-shared-user-files.s3.eu-west-1.amazonaws.com/PlusOne-payufin/b8665013-f3e1-4c71-acfc-0c354f9229a3/orchestrator_smart_data_interface.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=ASIAVH6JITAPY7SK5NQO%2F20250824%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20250824T113855Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJGMEQCIEwwiz6yu7R%2FJvXQ5SKmflxuukMGtqARA9FZiyoxBQwDAiB5XQiE18feBvdjELqKvp3ybMrb43BRLN12PNApTeNsliqRBAhEEAEaDDM2MDY2MjQ3MjczNSIMrAkPbzbarGuIGbPXKu4DxhVUTUJQnYBla7pSFG%2BgLkxEhUbnMTUi3W8LDkKzd6NHENYuUfWfAFzghdMMlNqd9cRw0du%2Fl2WegCz7Ssoq0IgkyVooewSHAy929ehlaO8CkGfHx6UoOkWtGFxE8OcliPu2883DHuarNZEfNR%2FXl8W7ROInYhB2dOB%2FIE%2FgNQo83ReOXBnxZZywIGNWxBTJs7h6EL8CXKoUcasAXqWGjbiDJxwsb%2BfmESRdHU7KLePB0BqlLfhTBoSPcEulL8FCDgiDasFRkf3ZaRMycldo%2FLaatSmqD%2Fq4peIkQSEfFt5a10a8tJBDnrZY3cwAJy3kkelSMLVHXEo8A0Bv2fKUbeV8wwXrGPG3e4EhWXMT2ZeKir7ryDWPYY48DuKddFkpN70GUi8br%2FVHlhBuiengZrDY1k36UizXRQlvtjO4mbaV%2F1xD9I5LBMRAqpvEsil%2FYSty7hOmBnKZavGQouJhLsj0xJliKEMh8zpiSwj2a5f4Rt7EpfHOprlocV%2Fjzi8YAcnb%2F1oHN5wp89eV4LXdrnHs1MeGfDTR1KOUfWE%2Fpi1avYataFrtBH1BOnigDPWiClPfMCB8BC4Nw4LqCOphPS2ufP9CC%2BeuuaM7EFUkzRnlZ0TyZwnIOTz%2F5PTlPPSa0FXI7pOhF%2BSOfVJQMrswquKrxQY6pwGXcVJBU%2Fdqejd1ogOvpCIoIi2aaYDXC5EKtqWypwsZtExZhj9A299tIWO%2BIOK1Mlmipxq3ijadEsu7RJpgdZ7cz%2F4mEbhF7y7XhJr5GRuKISLwrYl5fK9QzXc1f2JXibHcTZdk%2BS2aYahDoSlIoTHcAMJpY4lSGYJPAvL9GZ9i04Vo7f2pcAXmZ3ZJGnk%2BnkH%2F3UaQoHwWrZ1HAUU%2B4pVBHZa9dYrFdg%3D%3D&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=dfe57405b614049144ad211b288e30c8508308c16fac5fe7a3a2238ff5e17810 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayU Finance AI Orchestrator</title>
+    <link href="./orchestrator_web_interface_files/css2" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+            --secondary-gradient: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+            --accent-teal: #0d9488;
+            --accent-teal-light: #14b8a6;
+            --light-teal: #f0fdfa;
+            --light-teal-blue: #ecfdf5;
+            --background-primary: #f0fdfa;
+            --background-secondary: #ffffff;
+            --background-tertiary: #f0fdfa;
+            --text-primary: #134e4a;
+            --text-secondary: #0f766e;
+            --text-muted: #0d9488;
+            --text-light: #5eead4;
+            --border-light: #a7f3d0;
+            --border-medium: #6ee7b7;
+            --success-bg: #ecfdf5;
+            --success-border: #34d399;
+            --success-text: #065f46;
+            --info-bg: #f0f9ff;
+            --info-border: #0ea5e9;
+            --info-text: #0c4a6e;
+            --error-bg: #fef2f2;
+            --error-border: #fca5a5;
+            --error-text: #dc2626;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius-sm: 4px;
+            --radius-md: 6px;
+            --radius-lg: 8px;
+            --radius-xl: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--background-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-feature-settings: 'cv01', 'cv03', 'cv04', 'cv11';
+            height: 100vh;
+            overflow: hidden;
+            font-weight: 400;
+        }
+        
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            height: 100vh;
+            max-width: 1800px;
+            margin: 0 auto;
+            background: var(--background-secondary);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Header */
+        .header {
+            grid-column: 1 / -1;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 24px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--shadow-md);
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .header-text h1 {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 2px;
+        }
+        
+        .header-text p {
+            font-size: 15px;
+            opacity: 0.85;
+            font-weight: 400;
+        }
+        
+        .header-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: #34d399;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+        
+        /* Left Column - Chat Interface */
+        .chat-column {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 96px);
+            background: var(--background-secondary);
+        }
+        
+        .chat-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 32px;
+            scroll-behavior: smooth;
+        }
+        
+        .chat-container::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .chat-container::-webkit-scrollbar-track {
+            background: var(--background-primary);
+        }
+        
+        .chat-container::-webkit-scrollbar-thumb {
+            background: var(--border-medium);
+            border-radius: 2px;
+        }
+        
+        .welcome-message {
+            text-align: center;
+            padding: 80px 40px;
+            color: var(--text-secondary);
+        }
+        
+        .welcome-message h2 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+        
+        .welcome-message p {
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+        
+        .conversation {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .message {
+            margin-bottom: 28px;
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .user-message {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .user-bubble {
+            background: var(--secondary-gradient);
+            color: white;
+            padding: 14px 18px;
+            border-radius: var(--radius-xl);
+            border-bottom-right-radius: var(--radius-sm);
+            max-width: 75%;
+            font-weight: 500;
+            font-size: 15px;
+            box-shadow: var(--shadow-sm);
+            line-height: 1.5;
+        }
+        
+        .ai-message {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        
+        .ai-avatar {
+            width: 36px;
+            height: 36px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 13px;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        
+        .ai-bubble {
+            background: var(--background-tertiary);
+            border: 1px solid var(--border-light);
+            padding: 18px 22px;
+            border-radius: var(--radius-xl);
+            border-bottom-left-radius: var(--radius-sm);
+            max-width: 85%;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .thinking-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+        
+        .thinking-dots {
+            display: flex;
+            gap: 3px;
+        }
+        
+        .thinking-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--accent-teal);
+            border-radius: 50%;
+            animation: thinking 1.4s infinite ease-in-out;
+        }
+        
+        .thinking-dot:nth-child(1) { animation-delay: -0.32s; }
+        .thinking-dot:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes thinking {
+            0%, 80%, 100% { opacity: 0.3; }
+            40% { opacity: 1; }
+        }
+        
+        /* Data Display Styles */
+        .data-form {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-top: 16px;
+        }
+        
+        .data-form-header {
+            background: var(--light-teal);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-light);
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+        
+        .data-form-content {
+            padding: 0;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            border-bottom: 1px solid var(--border-light);
+            min-height: 44px;
+        }
+        
+        .form-row:last-child {
+            border-bottom: none;
+        }
+        
+        .form-label {
+            background: var(--background-tertiary);
+            padding: 12px 16px;
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--text-secondary);
+            border-right: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+        }
+        
+        .form-value {
+            padding: 12px 16px;
+            font-size: 14px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            word-break: break-word;
+        }
+        
+        .data-table {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-top: 16px;
+        }
+        
+        .data-table-header {
+            background: var(--light-teal);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-light);
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .data-table table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        
+        .data-table th {
+            background: var(--background-tertiary);
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-light);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .data-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-light);
+            color: var(--text-primary);
+            vertical-align: top;
+        }
+        
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .data-table tr:hover {
+            background: var(--background-tertiary);
+        }
+        
+        .image-field {
+            max-width: 200px;
+            max-height: 150px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-light);
+            object-fit: cover;
+        }
+        
+        .nested-object {
+            background: var(--background-tertiary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            padding: 8px 12px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+        
+        .null-value {
+            color: var(--text-light);
+            font-style: italic;
+            font-weight: 300;
+        }
+        
+        .boolean-value {
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .boolean-true {
+            background: var(--success-bg);
+            color: var(--success-text);
+        }
+        
+        .boolean-false {
+            background: var(--error-bg);
+            color: var(--error-text);
+        }
+        
+        /* Input Area */
+        .input-area {
+            background: var(--background-secondary);
+            border-top: 1px solid var(--border-light);
+            padding: 20px 32px;
+        }
+        
+        .input-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .input-wrapper {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            padding: 4px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+        }
+        
+        .input-wrapper:focus-within {
+            border-color: var(--accent-teal);
+            box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.1);
+        }
+        
+        .input-form {
+            display: flex;
+            align-items: flex-end;
+            gap: 10px;
+        }
+        
+        .input-field {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 14px 18px;
+            font-size: 15px;
+            font-family: inherit;
+            font-weight: 400;
+            resize: none;
+            max-height: 120px;
+            min-height: 20px;
+            background: transparent;
+            color: var(--text-primary);
+        }
+        
+        .input-field::placeholder {
+            color: var(--text-light);
+            font-weight: 300;
+        }
+        
+        .send-button {
+            background: var(--primary-gradient);
+            border: none;
+            border-radius: var(--radius-lg);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin: 4px;
+        }
+        
+        .send-button:hover:not(:disabled) {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .send-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .suggestions {
+            display: flex;
+            gap: 8px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+        
+        .suggestion-chip {
+            background: var(--light-teal);
+            border: 1px solid var(--accent-teal);
+            border-radius: 18px;
+            padding: 6px 14px;
+            font-size: 13px;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            font-weight: 500;
+        }
+        
+        .suggestion-chip:hover {
+            background: var(--secondary-gradient);
+            color: white;
+            transform: translateY(-1px);
+            border-color: transparent;
+        }
+        
+        /* Right Column - Insights */
+        .insights-column {
+            background: var(--background-primary);
+            border-left: 1px solid var(--border-light);
+            height: calc(100vh - 96px);
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .insights-column::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .insights-column::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .insights-column::-webkit-scrollbar-thumb {
+            background: var(--border-medium);
+            border-radius: 2px;
+        }
+        
+        .insight-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+        
+        .insight-header {
+            background: var(--light-teal);
+            color: var(--text-primary);
+            padding: 14px 18px;
+            font-weight: 600;
+            font-size: 14px;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .insight-content {
+            padding: 18px;
+        }
+        
+        .reasoning-item {
+            margin-bottom: 16px;
+        }
+        
+        .reasoning-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .reasoning-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 6px;
+        }
+        
+        .reasoning-text {
+            color: var(--text-primary);
+            line-height: 1.5;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        
+        .step-list {
+            list-style: none;
+        }
+        
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .step-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        
+        .step-number {
+            width: 22px;
+            height: 22px;
+            background: var(--secondary-gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+        
+        .step-content h5 {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+        
+        .step-content p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            font-weight: 400;
+        }
+        
+        .step-status {
+            margin-left: auto;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        
+        .step-status.success {
+            background: var(--success-bg);
+            color: var(--success-text);
+        }
+        
+        .step-status.error {
+            background: var(--error-bg);
+            color: var(--error-text);
+        }
+        
+        .logs-container {
+            background: #134e4a;
+            color: #ccfbf1;
+            border-radius: var(--radius-lg);
+            padding: 14px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            font-size: 11px;
+            line-height: 1.4;
+            max-height: 280px;
+            overflow-y: auto;
+        }
+        
+        .log-entry {
+            margin-bottom: 3px;
+            word-wrap: break-word;
+        }
+        
+        .log-timestamp {
+            color: #5eead4;
+            margin-right: 6px;
+            font-weight: 400;
+        }
+        
+        .log-info { color: #14b8a6; }
+        .log-success { color: #34d399; }
+        .log-error { color: #f87171; }
+        .log-warning { color: #fbbf24; }
+        
+        /* Info boxes */
+        .info-box {
+            background: var(--info-bg);
+            border: 1px solid var(--info-border);
+            border-radius: var(--radius-lg);
+            padding: 16px 20px;
+        }
+        
+        .info-box h4 {
+            color: var(--info-text);
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        .error-box {
+            background: var(--error-bg);
+            border: 1px solid var(--error-border);
+            border-radius: var(--radius-lg);
+            padding: 16px 20px;
+        }
+        
+        .error-box h4 {
+            color: var(--error-text);
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+        
+        .error-box p {
+            color: var(--error-text);
+            font-weight: 400;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .main-container {
+                grid-template-columns: 1fr 360px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .insights-column {
+                display: none;
+            }
+            
+            .header {
+                padding: 16px 20px;
+            }
+            
+            .header-text h1 {
+                font-size: 22px;
+            }
+            
+            .chat-container {
+                padding: 20px;
+            }
+            
+            .input-area {
+                padding: 16px 20px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-label {
+                border-right: none;
+                border-bottom: 1px solid var(--border-light);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logo">AI</div>
+                <div class="header-text">
+                    <h1>PayU Finance AI Orchestrator</h1>
+                    <p>Advanced AI-powered financial data intelligence</p>
+                </div>
+            </div>
+            <div class="header-status">
+                <div class="status-dot"></div>
+                <span>Online</span>
+            </div>
+        </div>
+        
+        <!-- Left Column - Chat Interface -->
+        <div class="chat-column">
+            <div class="chat-container" id="chatContainer">
+                <div class="welcome-message" id="welcomeMessage" style="display: none;">
+                    <h2>Welcome to PayU Finance AI</h2>
+                    <p>Ask me anything about user data, KYC information, AML status, or financial records. I'll intelligently orchestrate multiple tools to give you comprehensive answers.</p>
+                </div>
+                <div class="conversation" id="conversation"><div class="message user-message">
+                <div class="user-bubble">Get address information for user with phone 9845267602</div>
+            </div><div class="message ai-message">
+                <div class="ai-avatar">AI</div>
+                <div class="ai-bubble">
+                    <div class="error-box">
+                        <h4>Connection Error</h4>
+                        <p>Unexpected token '&lt;', "&lt;?xml vers"... is not valid JSON</p>
+                    </div>
+                </div>
+            </div></div>
+            </div>
+            
+            <div class="input-area">
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <form class="input-form" id="chatForm">
+                            <textarea class="input-field" id="messageInput" placeholder="Ask about user data, KYC status, AML screening..." rows="1" required=""></textarea>
+                            <button type="submit" class="send-button" id="sendButton">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="suggestions" id="suggestions">
+                        <div class="suggestion-chip" onclick="sendSuggestion(&#39;Get details of user with phone 9845267602&#39;)">
+                            User Details
+                        </div>
+                        <div class="suggestion-chip" onclick="sendSuggestion(&#39;Get KYC information for user with phone 9845267602&#39;)">
+                            KYC Status
+                        </div>
+                        <div class="suggestion-chip" onclick="sendSuggestion(&#39;Get AML status for user with phone 9845267602&#39;)">
+                            AML Check
+                        </div>
+                        <div class="suggestion-chip" onclick="sendSuggestion(&#39;Get address information for user with phone 9845267602&#39;)">
+                            Address Info
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Column - Insights -->
+        <div class="insights-column" id="insightsColumn">
+            <div class="insight-card">
+                <div class="insight-header">
+                    AI Reasoning
+                </div>
+                <div class="insight-content" id="reasoningContent">
+                    <p style="color: var(--text-muted); font-style: italic; font-weight: 300;">AI reasoning will appear here when you submit a query...</p>
+                </div>
+            </div>
+            
+            <div class="insight-card" id="stepsCard" style="display: none;">
+                <div class="insight-header">
+                    Execution Steps
+                </div>
+                <div class="insight-content">
+                    <ul class="step-list" id="stepsList"></ul>
+                </div>
+            </div>
+            
+            <div class="insight-card">
+                <div class="insight-header">
+                    System Logs
+                </div>
+                <div class="insight-content">
+                    <div class="logs-container" id="logsContainer">
+                        <div class="log-entry log-info">
+                            <span class="log-timestamp">[${new Date().toLocaleTimeString()}]</span>
+                            AI Orchestrator initialized and ready
+                        </div>
+                        <div class="log-entry log-info">
+                            <span class="log-timestamp">[${new Date().toLocaleTimeString()}]</span>
+                            Type your query to get started
+                        </div>
+                    <div class="log-entry log-info">
+                <span class="log-timestamp">[5:08:56 PM]</span>
+                Ready to process your financial data queries
+            </div><div class="log-entry log-info">
+                <span class="log-timestamp">[5:08:58 PM]</span>
+                Processing query: Get address information for user with phone 9845267602
+            </div><div class="log-entry log-error">
+                <span class="log-timestamp">[5:08:58 PM]</span>
+                Error: Unexpected token '&lt;', "&lt;?xml vers"... is not valid JSON
+            </div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let conversationHistory = [];
+        let isProcessing = false;
+        
+        // Auto-resize textarea
+        const messageInput = document.getElementById('messageInput');
+        messageInput.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+        });
+        
+        // Handle form submission
+        document.getElementById('chatForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            if (isProcessing) return;
+            
+            const message = messageInput.value.trim();
+            if (!message) return;
+            
+            await sendMessage(message);
+            messageInput.value = '';
+            messageInput.style.height = 'auto';
+        });
+        
+        // Handle suggestion clicks
+        function sendSuggestion(message) {
+            if (isProcessing) return;
+            sendMessage(message);
+        }
+        
+        async function sendMessage(message) {
+            isProcessing = true;
+            const sendButton = document.getElementById('sendButton');
+            const welcomeMessage = document.getElementById('welcomeMessage');
+            const conversation = document.getElementById('conversation');
+            
+            // Hide welcome message
+            welcomeMessage.style.display = 'none';
+            
+            // Add user message
+            addUserMessage(message);
+            
+            // Show AI thinking
+            const thinkingId = addAIThinking();
+            
+            // Disable input
+            sendButton.disabled = true;
+            
+            // Add log
+            addLog(`Processing query: ${message}`, 'info');
+            
+            try {
+                const response = await fetch('/api/orchestrator/complex', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query: message })
+                });
+                
+                const data = await response.json();
+                
+                // Remove thinking indicator
+                document.getElementById(thinkingId).remove();
+                
+                // Add AI response
+                addAIResponse(data);
+                
+                // Update insights
+                updateInsights(data);
+                
+                addLog(`Query completed ${data.success ? 'successfully' : 'with errors'}`, data.success ? 'success' : 'error');
+                
+            } catch (error) {
+                document.getElementById(thinkingId).remove();
+                addAIError(error.message);
+                addLog(`Error: ${error.message}`, 'error');
+            } finally {
+                isProcessing = false;
+                sendButton.disabled = false;
+                scrollToBottom();
+            }
+        }
+        
+        function addUserMessage(message) {
+            const conversation = document.getElementById('conversation');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message user-message';
+            messageDiv.innerHTML = `
+                <div class="user-bubble">${escapeHtml(message)}</div>
+            `;
+            conversation.appendChild(messageDiv);
+            scrollToBottom();
+        }
+        
+        function addAIThinking() {
+            const conversation = document.getElementById('conversation');
+            const thinkingId = 'thinking-' + Date.now();
+            const messageDiv = document.createElement('div');
+            messageDiv.id = thinkingId;
+            messageDiv.className = 'message ai-message';
+            messageDiv.innerHTML = `
+                <div class="ai-avatar">AI</div>
+                <div class="ai-bubble">
+                    <div class="thinking-indicator">
+                        <span>Analyzing your query</span>
+                        <div class="thinking-dots">
+                            <div class="thinking-dot"></div>
+                            <div class="thinking-dot"></div>
+                            <div class="thinking-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            conversation.appendChild(messageDiv);
+            scrollToBottom();
+            return thinkingId;
+        }
+        
+        function addAIResponse(data) {
+            const conversation = document.getElementById('conversation');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message ai-message';
+            
+            let responseContent = '';
+            
+            if (data.success) {
+                // Show formatted data if available
+                if (data.executed_steps && data.executed_steps.length > 0) {
+                    const lastStep = data.executed_steps[data.executed_steps.length - 1];
+                    if (lastStep.success && lastStep.result) {
+                        responseContent = renderFormattedData(lastStep.result);
+                    }
+                }
+                
+                // If no data or just want to show success
+                if (!responseContent) {
+                    responseContent = `
+                        <div class="info-box">
+                            <h4>Query Completed Successfully</h4>
+                            <p>The query was executed successfully but no data was returned.</p>
+                        </div>
+                    `;
+                }
+            } else {
+                // Error response
+                responseContent = `
+                    <div class="error-box">
+                        <h4>Query Failed</h4>
+                        <p>${escapeHtml(data.error || 'Unknown error occurred')}</p>
+                    </div>
+                `;
+            }
+            
+            messageDiv.innerHTML = `
+                <div class="ai-avatar">AI</div>
+                <div class="ai-bubble">${responseContent}</div>
+            `;
+            
+            conversation.appendChild(messageDiv);
+            scrollToBottom();
+        }
+        
+        function renderFormattedData(result) {
+            if (!result) return '';
+            
+            if (Array.isArray(result)) {
+                return renderDataTable(result);
+            } else if (typeof result === 'object') {
+                return renderDataForm(result);
+            } else {
+                return `<div class="form-value">${escapeHtml(String(result))}</div>`;
+            }
+        }
+        
+        function renderDataForm(data) {
+            const keys = Object.keys(data);
+            if (keys.length === 0) return '<p>No data available</p>';
+            
+            let html = `
+                <div class="data-form">
+                    <div class="data-form-header">User Information</div>
+                    <div class="data-form-content">
+            `;
+            
+            keys.forEach(key => {
+                const value = data[key];
+                const formattedValue = formatValue(value);
+                const displayKey = formatKey(key);
+                
+                html += `
+                    <div class="form-row">
+                        <div class="form-label">${displayKey}</div>
+                        <div class="form-value">${formattedValue}</div>
+                    </div>
+                `;
+            });
+            
+            html += `
+                    </div>
+                </div>
+            `;
+            
+            return html;
+        }
+        
+        function renderDataTable(data) {
+            if (!Array.isArray(data) || data.length === 0) {
+                return '<p>No data available</p>';
+            }
+            
+            const firstItem = data[0];
+            const keys = Object.keys(firstItem);
+            
+            let html = `
+                <div class="data-table">
+                    <div class="data-table-header">Retrieved Records (${data.length})</div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+            `;
+            
+            keys.forEach(key => {
+                html += `<th>${formatKey(key)}</th>`;
+            });
+            
+            html += `
+                                </tr>
+                            </thead>
+                            <tbody>
+            `;
+            
+            data.forEach(item => {
+                html += '<tr>';
+                keys.forEach(key => {
+                    const value = item[key];
+                    const formattedValue = formatValue(value);
+                    html += `<td>${formattedValue}</td>`;
+                });
+                html += '</tr>';
+            });
+            
+            html += `
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            `;
+            
+            return html;
+        }
+        
+        function formatKey(key) {
+            // Convert snake_case to Title Case
+            return key
+                .split('_')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+        }
+        
+        function formatValue(value) {
+            if (value === null || value === undefined) {
+                return '<span class="null-value">Not Available</span>';
+            }
+            
+            if (typeof value === 'boolean') {
+                return `<span class="boolean-value boolean-${value}">${value}</span>`;
+            }
+            
+            if (typeof value === 'string') {
+                // Check if it's a base64 image
+                if (isBase64Image(value)) {
+                    return `<img src="data:image/jpeg;base64,${value}" class="image-field" alt="Image" />`;
+                }
+                
+                // Check if it's a URL
+                if (value.startsWith('http://') || value.startsWith('https://')) {
+                    return `<a href="${value}" target="_blank" style="color: var(--accent-teal);">${escapeHtml(value)}</a>`;
+                }
+                
+                return escapeHtml(value);
+            }
+            
+            if (typeof value === 'number') {
+                // Format large numbers with commas
+                if (value > 999) {
+                    return value.toLocaleString();
+                }
+                return value.toString();
+            }
+            
+            if (typeof value === 'object') {
+                return `<div class="nested-object">${JSON.stringify(value, null, 2)}</div>`;
+            }
+            
+            return escapeHtml(String(value));
+        }
+        
+        function isBase64Image(str) {
+            // Simple check for base64 image data
+            return typeof str === 'string' && 
+                   str.length > 100 && 
+                   /^[A-Za-z0-9+/]*={0,2}$/.test(str) &&
+                   str.length % 4 === 0;
+        }
+        
+        function addAIError(error) {
+            const conversation = document.getElementById('conversation');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message ai-message';
+            messageDiv.innerHTML = `
+                <div class="ai-avatar">AI</div>
+                <div class="ai-bubble">
+                    <div class="error-box">
+                        <h4>Connection Error</h4>
+                        <p>${escapeHtml(error)}</p>
+                    </div>
+                </div>
+            `;
+            conversation.appendChild(messageDiv);
+            scrollToBottom();
+        }
+        
+        function updateInsights(data) {
+            // Update reasoning
+            if (data.reasoning) {
+                const reasoningContent = document.getElementById('reasoningContent');
+                reasoningContent.innerHTML = `
+                    <div class="reasoning-item">
+                        <div class="reasoning-label">Analysis</div>
+                        <div class="reasoning-text">${escapeHtml(data.reasoning.analysis || 'No analysis provided')}</div>
+                    </div>
+                    <div class="reasoning-item">
+                        <div class="reasoning-label">Strategy</div>
+                        <div class="reasoning-text">${escapeHtml(data.reasoning.strategy || 'No strategy provided')}</div>
+                    </div>
+                    <div class="reasoning-item">
+                        <div class="reasoning-label">Tool Sequence</div>
+                        <div class="reasoning-text">${escapeHtml(data.reasoning.tool_sequence || 'No sequence provided')}</div>
+                    </div>
+                `;
+            }
+            
+            // Update steps
+            if (data.executed_steps && data.executed_steps.length > 0) {
+                const stepsCard = document.getElementById('stepsCard');
+                const stepsList = document.getElementById('stepsList');
+                
+                stepsCard.style.display = 'block';
+                stepsList.innerHTML = '';
+                
+                data.executed_steps.forEach(step => {
+                    const stepItem = document.createElement('li');
+                    stepItem.className = 'step-item';
+                    stepItem.innerHTML = `
+                        <div class="step-number">${step.step}</div>
+                        <div class="step-content">
+                            <h5>${escapeHtml(step.purpose || step.tool)}</h5>
+                            <p>Tool: ${escapeHtml(step.tool)}</p>
+                        </div>
+                        <div class="step-status ${step.success ? 'success' : 'error'}">
+                            ${step.success ? 'Success' : 'Failed'}
+                        </div>
+                    `;
+                    stepsList.appendChild(stepItem);
+                    
+                    addLog(`Step ${step.step}: ${step.tool} - ${step.success ? 'Success' : 'Failed'}`, step.success ? 'success' : 'error');
+                });
+            }
+        }
+        
+        function addLog(message, type = 'info') {
+            const logsContainer = document.getElementById('logsContainer');
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry log-${type}`;
+            logEntry.innerHTML = `
+                <span class="log-timestamp">[${new Date().toLocaleTimeString()}]</span>
+                ${escapeHtml(message)}
+            `;
+            logsContainer.appendChild(logEntry);
+            logsContainer.scrollTop = logsContainer.scrollHeight;
+        }
+        
+        function scrollToBottom() {
+            const chatContainer = document.getElementById('chatContainer');
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Initialize
+        addLog('Ready to process your financial data queries', 'info');
+    </script>
+
+</body></html>

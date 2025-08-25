@@ -1,0 +1,18 @@
+environment: DEV   # or PROD
+
+connections:
+  pscore_postgres:
+    type: postgresql
+    host: pscore-read-rds.internal.gopaysense.com
+    user: pscore_read
+    password: 0d243d9d7ef8fe1e146e94d4
+    database: pscore_production
+    port: 5432
+    ssh:
+      enable: true
+      ssh_host: bastion-prod.gopaysense.com
+      ssh_user: sankar.amburkar
+      ssh_password: 
+      ssh_port: 272
+      ssh_pkey: ~/.ssh/id_ed25519
+  # Add more DBs here as needed (e.g., another_postgres, oracle_erp, etc)

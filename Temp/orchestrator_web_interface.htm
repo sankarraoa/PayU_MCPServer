@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<!-- saved from url=(1680)https://product-ai-production-core-shared-user-files.s3.eu-west-1.amazonaws.com/PlusOne-payufin/b8665013-f3e1-4c71-acfc-0c354f9229a3/orchestrator_web_interface_fixed.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Checksum-Mode=ENABLED&X-Amz-Credential=ASIAVH6JITAP2H6KD7JG%2F20250824%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20250824T101407Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCWV1LXdlc3QtMSJHMEUCIC8aC0AhbGOEBunmiULOHgXelyghL%2Ff7TVTpohiM4P6aAiEAzmU%2FJZ3W2LaQHU8jK8nOKcs5f263OLWCTAkwlBMmfE0qkQQIPhABGgwzNjA2NjI0NzI3MzUiDMkZyd0E04dU%2F74GiSruAwBqB7N54I%2Bw8aNbb8f3pgrJd4VW9Ds1pd0NEOM36BLmrOShChjL3i2f0y%2FwCV1LRoHFUHPkf43Bc5mHCWUWzJcU%2BqUR%2BkZHAbZ6Mq2jy2BsD5sp4HSuUZlx3diWZZQbwlbnsFM%2BxPj6tQKSUlZpbEF46%2Bd2b1V%2BBwe%2FrAUtV%2Ft7%2FyCw2SvuDIlKS5VX5HpnTtNzPSBTT%2FAGE2YgYCCZnGVMIe0UY9kaCqdHC7gX0ifpD%2FYof%2BjU4ef%2FNOo6gWZcZl1MsMyUo4B%2FpCXXid36Hj95%2Bp2Tq0c3kCSEMCsSyfTEpjmWUGIcD5KPss9WMLGPrCFdkUxUXMOYhpLypdONFgfOKg2bWeRgwpiImC1WXRQ0r7aJPkjpBZi2%2B8uWe1tuoAqawozV4wXtGQ%2BhhZhvareIMnJHp7bCizYgxgDQ7FDOFOqV8li2ontLDM53e%2FizFceMSIK9Tkh4W%2BbyLm3rRs%2F5pIYpjxh3ulodEsdSZxsB21FpAIcnp58%2BIQd3oiTDjeprSTSY0TrchWphuVPID7x%2FwYepRNnp9rdkGdSXxCYAjFtrS9QwpNFS%2FI2DiL3apv06Xmd6BnAJJoXFwGEDSiuSTx7OQwV6tHCwUpAB0N4r3WSYEP3tG7yUVBlwxQRfVnbH0whsR7H1MGYulF3bMO%2B8qsUGOqYB1fiz5hulgiwtsQHrqfuJ4pvhxET0Zsrrnwfe1LJfxNySB8g50UC5tZ7GjGgAdwqeY0bZvGQH5DsePtawFNnf5DnDZTQJfH8%2BCNTXuyNKWDHTffSBrDozS%2FC56uZow3n4%2FeTtXpRAuhGait8%2BWGBBKThG3GJXTQpVtDjzvFeNPadeVTWjbFP3HTldQXlN%2FtM9dvNubt3ULrLmlcDlFd1ftvWGOIAz9Q%3D%3D&X-Amz-SignedHeaders=host&x-id=GetObject&X-Amz-Signature=da6295c8a1ce346283ef5c9dc31d99874b1c23984c51a3a602a7add3de26383e -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayU Finance AI Orchestrator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+        
+        .main-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: calc(100vh - 200px);
+        }
+        
+        .output-section {
+            flex: 1;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-y: auto;
+            min-height: 300px;
+            position: relative;
+        }
+        
+        .output-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        .output-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .clear-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        
+        .clear-btn:hover {
+            background: #c82333;
+        }
+        
+        .output-content {
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #212529;
+            min-height: 200px;
+        }
+        
+        .input-section {
+            background: #fff;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .input-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .input-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #ced4da;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+        
+        .input-textarea:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+        }
+        
+        .input-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .send-btn {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(40,167,69,0.3);
+        }
+        
+        .send-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40,167,69,0.4);
+        }
+        
+        .send-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #6c757d;
+        }
+        
+        .loading {
+            color: #007bff;
+        }
+        
+        .success {
+            color: #28a745;
+        }
+        
+        .error {
+            color: #dc3545;
+        }
+        
+        .spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .example-queries {
+            background: #e7f3ff;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .example-queries h4 {
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+        
+        .example-queries ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .example-queries li {
+            padding: 5px 0;
+            color: #495057;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .example-queries li:hover {
+            color: #007bff;
+        }
+        
+        .reasoning-section {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .reasoning-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .steps-section {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .steps-title {
+            font-weight: 600;
+            color: #0c5460;
+            margin-bottom: 10px;
+        }
+        
+        .step-item {
+            background: white;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .success-section {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .error-section {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .json-toggle-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        
+        .json-content {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 PayU Finance AI Orchestrator</h1>
+            <p>Intelligent query processing with multi-tool coordination</p>
+        </div>
+        
+        <div class="main-content">
+            <!-- Output Section -->
+            <div class="output-section">
+                <div class="output-header">
+                    <span class="output-title">📊 Query Results</span>
+                    <button class="clear-btn" onclick="clearAll()">🗑️ Clear</button>
+                </div>
+                <div class="output-content" id="outputArea">
+                    <div style="text-align: center; color: #6c757d; padding: 50px;">
+                        <h3>🚀 Ready to process your queries!</h3>
+                        <p>Enter a query below and click Send to see intelligent multi-tool responses.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Input Section -->
+            <div class="input-section">
+                <label class="input-label" for="queryInput">💬 Enter Your Query:</label>
+                <textarea id="queryInput" class="input-textarea" placeholder="Examples:
+• Get details of user with phone number as 9845267602
+• Get KYC details for user with phone 9845267602
+• Show me AML status for user with phone 9845267602  
+• Get complete profile for user with phone 9845267602"></textarea>
+                
+                <div class="input-controls">
+                    <div class="status-indicator" id="statusIndicator">
+                        <span>Ready</span>
+                    </div>
+                    <button class="send-btn" id="sendBtn" onclick="sendQuery()">
+                        🚀 Send Query
+                    </button>
+                </div>
+                
+                <div class="example-queries">
+                    <h4>💡 Example Queries (click to use):</h4>
+                    <ul>
+                        <li onclick="setQuery(&#39;Get details of user with phone number as 9845267602&#39;)">Get details of user with phone number as 9845267602</li>
+                        <li onclick="setQuery(&#39;Get KYC details for user with phone 9845267602&#39;)">Get KYC details for user with phone 9845267602</li>
+                        <li onclick="setQuery(&#39;Check AML status for user with phone 9845267602&#39;)">Check AML status for user with phone 9845267602</li>
+                        <li onclick="setQuery(&#39;Get address information for user with phone 9845267602&#39;)">Get address information for user with phone 9845267602</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function sendQuery() {
+            const queryInput = document.getElementById('queryInput');
+            const outputArea = document.getElementById('outputArea');
+            const sendBtn = document.getElementById('sendBtn');
+            const statusIndicator = document.getElementById('statusIndicator');
+            
+            const query = queryInput.value.trim();
+            
+            if (!query) {
+                alert('Please enter a query!');
+                return;
+            }
+            
+            // Update UI for loading state
+            sendBtn.disabled = true;
+            sendBtn.innerHTML = '⏳ Processing...';
+            statusIndicator.innerHTML = '<div class="spinner"></div><span class="loading">Processing query...</span>';
+            
+            // Clear previous output and show loading
+            outputArea.innerHTML = `
+                <div style="text-align: center; padding: 40px;">
+                    <div class="spinner" style="margin: 0 auto 20px;"></div>
+                    <h3 style="color: #007bff;">🤖 AI Orchestrator is thinking...</h3>
+                    <p style="color: #6c757d;">Query: "${query}"</p>
+                </div>
+            `;
+            
+            try {
+                // Make API call to orchestrator
+                console.log('Sending query:', query);
+                const response = await fetch('/api/orchestrator/complex', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        query: query
+                    })
+                });
+                
+                console.log('Response status:', response.status);
+                const result = await response.json();
+                console.log('Response data:', result);
+                
+                // Display results
+                displayResults(result, query);
+                
+                // Update status
+                if (result.success) {
+                    statusIndicator.innerHTML = '<span class="success">✅ Query completed successfully!</span>';
+                } else {
+                    statusIndicator.innerHTML = '<span class="error">❌ Query failed</span>';
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                outputArea.innerHTML = `
+                    <div class="error-section">
+                        <h3>❌ Error</h3>
+                        <p>Failed to process query: ${error.message}</p>
+                        <p style="font-size: 0.9rem; color: #6c757d;">Make sure the HTTP server is running on port 5000</p>
+                    </div>
+                `;
+                statusIndicator.innerHTML = '<span class="error">❌ Connection error</span>';
+            } finally {
+                // Reset button
+                sendBtn.disabled = false;
+                sendBtn.innerHTML = '🚀 Send Query';
+            }
+        }
+        
+        function displayResults(result, query) {
+            const outputArea = document.getElementById('outputArea');
+            
+            let html = `<div style="margin-bottom: 20px;">
+                <h3 style="color: #28a745;">🎯 Query: "${query}"</h3>
+                <p style="color: #6c757d; font-size: 0.9rem;">Conversation ID: ${result.conversation_id || 'N/A'}</p>
+            </div>`;
+            
+            if (result.success) {
+                html += `<div class="success-section">
+                    <h4 style="color: #155724;">✅ Query Completed Successfully!</h4>
+                    <p>Steps completed: ${result.total_steps_completed || 0}/${result.total_steps_planned || 0}</p>
+                </div>`;
+                
+                // Show AI Reasoning
+                if (result.reasoning) {
+                    html += `
+                        <div class="reasoning-section">
+                            <div class="reasoning-title">🧠 AI Reasoning:</div>
+                            <p><strong>Analysis:</strong> ${result.reasoning.analysis || 'N/A'}</p>
+                            <p><strong>Strategy:</strong> ${result.reasoning.strategy || 'N/A'}</p>
+                            <p><strong>Tool Sequence:</strong> ${result.reasoning.tool_sequence || 'N/A'}</p>
+                        </div>
+                    `;
+                }
+                
+                // Show Execution Steps
+                if (result.executed_steps && result.executed_steps.length > 0) {
+                    html += `
+                        <div class="steps-section">
+                            <div class="steps-title">⚙️ Execution Steps:</div>
+                    `;
+                    
+                    result.executed_steps.forEach((step, index) => {
+                        const status = step.success ? '✅' : '❌';
+                        let resultSummary = 'No result';
+                        
+                        if (step.success && step.result) {
+                            if (step.result.users && step.result.users.length > 0) {
+                                resultSummary = `Found ${step.result.users.length} user(s) - ${step.result.users[0].name}`;
+                            } else if (step.result.user_id) {
+                                resultSummary = `Retrieved data for user ${step.result.user_id}`;
+                            } else if (step.result.success) {
+                                resultSummary = 'Success';
+                            } else {
+                                resultSummary = 'Completed';
+                            }
+                        } else if (!step.success) {
+                            resultSummary = step.error || 'Failed';
+                        }
+                            
+                        html += `
+                            <div class="step-item">
+                                <strong>${status} Step ${step.step}: ${step.tool}</strong><br>
+                                <em>Purpose:</em> ${step.purpose}<br>
+                                <em>Result:</em> ${resultSummary}
+                            </div>
+                        `;
+                    });
+                    
+                    html += '</div>';
+                }
+                
+            } else {
+                // Show error
+                html += `
+                    <div class="error-section">
+                        <h4>❌ Query Failed</h4>
+                        <p><strong>Error:</strong> ${result.error || 'Unknown error'}</p>
+                        ${result.raw_response ? `<p><strong>Details:</strong> ${result.raw_response.substring(0, 200)}...</p>` : ''}
+                    </div>
+                `;
+            }
+            
+            // Add Raw JSON toggle
+            html += `
+                <button class="json-toggle-btn" onclick="toggleJson()">
+                    📄 Toggle Raw JSON
+                </button>
+                <div id="rawJson" class="json-content">
+                    ${JSON.stringify(result, null, 2)}
+                </div>
+            `;
+            
+            outputArea.innerHTML = html;
+        }
+        
+        function toggleJson() {
+            const jsonDiv = document.getElementById('rawJson');
+            if (jsonDiv.style.display === 'none' || jsonDiv.style.display === '') {
+                jsonDiv.style.display = 'block';
+            } else {
+                jsonDiv.style.display = 'none';
+            }
+        }
+        
+        function setQuery(query) {
+            document.getElementById('queryInput').value = query;
+        }
+        
+        function clearAll() {
+            document.getElementById('queryInput').value = '';
+            document.getElementById('outputArea').innerHTML = `
+                <div style="text-align: center; color: #6c757d; padding: 50px;">
+                    <h3>🚀 Ready to process your queries!</h3>
+                    <p>Enter a query below and click Send to see intelligent multi-tool responses.</p>
+                </div>
+            `;
+            document.getElementById('statusIndicator').innerHTML = '<span>Ready</span>';
+        }
+        
+        // Allow Enter key to send (with Shift+Enter for new line)
+        document.getElementById('queryInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendQuery();
+            }
+        });
+    </script>
+
+</body></html>
